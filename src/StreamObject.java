@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -28,6 +29,15 @@ public class StreamObject {
         List<Integer> list=Arrays.asList(1,2,3,4,5,6,7,8,9);
         Stream<Integer> stream1 = list.stream();
         stream1.forEach(integer -> System.out.println(integer));
+
+        // 6. Using Stream.generate() or Stream.itarete()
+        Stream<Integer> randomNum = Stream.generate(() -> new Random().nextInt(100));
+        randomNum.limit(10).forEach(System.out::println);
+
+        // 7.Using Split
+        Stream<String> splitNames = Stream.of("pankaj@push&pendra@Amit@Rahul".split("\\@"));
+        splitNames.forEach(System.out::println);
+
 
     }
 }

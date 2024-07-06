@@ -24,7 +24,7 @@ public class StreamMethods {
         squarNum.stream().sorted((o1, o2) -> o2.compareTo(o1)).forEach(System.out::println);
 
         // minimum
-        Integer integer = squarNum.stream().min((o1, o2) -> o1.compareTo(o2)).get();
+        Integer integer = squarNum.stream().min(Integer::compareTo).get();
         System.out.println("MIN : "+integer);
 
         // Maximum
